@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&amp;display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;background:#f5f1e8;}
+  a{color:inherit;text-decoration:none;}
+  ::selection{background:#1b1a17;color:#f5f1e8;}
+  @keyframes pageIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+</style>
+</helmet>
+
+<div ref="{{ rootRef }}" data-root="" style="--accent:#3a5a78;--paper:#f5f1e8;--ink:#1b1a17;--ink2:#57534a;--faint:#928c7e;--rule:#e2dbcb;--card:#fbf8f1;background:var(--paper);min-height:100vh;color:var(--ink);font-family:'Newsreader',Georgia,serif;font-size:18px;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;">
+
+  <!-- ===== MASTHEAD ===== -->
+  <div class="app-nav" style="max-width:760px;width:100%;margin:0 auto;padding:64px 40px 0;">
+    <div style="display:flex;gap:30px;align-items:center;flex-wrap:wrap;">
+      <a onClick="{{ goHome }}" style="cursor:pointer;flex:none;">
+        <img src="headshot.png" alt="Max Kamachee" style="display:block;width:160px;height:160px;border-radius:50%;object-fit:cover;">
+      </a>
+      <div style="flex:1;min-width:240px;">
+        <a onClick="{{ goHome }}" style="cursor:pointer;">
+          <h1 style="font-weight:600;font-size:48px;line-height:1.04;letter-spacing:-0.018em;margin:0 0 6px;">Max Kamachee</h1>
+        </a>
+        <div onClick="{{ emailTo }}" style="cursor:pointer;font-size:18px;color:var(--accent);margin-top:10px;width:fit-content;border-bottom:1px solid var(--rule);" style-hover="border-color:var(--accent)">max.kamachee [at] gmail [dot] com</div>
+      </div>
+    </div>
+
+    <nav style="display:flex;flex-wrap:wrap;gap:5px 24px;align-items:baseline;font-size:19px;padding:0;margin-top:34px;">
+      <a onClick="{{ goHome }}" style="cursor:pointer;color:{{ cHome }};border-bottom:1px solid {{ uHome }};padding-bottom:1px;" style-hover="color:var(--accent)">Home</a>
+      <a onClick="{{ goResearch }}" style="cursor:pointer;color:{{ cResearch }};border-bottom:1px solid {{ uResearch }};padding-bottom:1px;" style-hover="color:var(--accent)">Research</a>
+      <a onClick="{{ goCool }}" style="cursor:pointer;color:{{ cCool }};border-bottom:1px solid {{ uCool }};padding-bottom:1px;" style-hover="color:var(--accent)">Other Stuff</a>
+      <a onClick="{{ goNow }}" style="cursor:pointer;color:{{ cNow }};border-bottom:1px solid {{ uNow }};padding-bottom:1px;" style-hover="color:var(--accent)">Now</a>
+      <span style="flex:1;min-width:12px;"></span>
+      <a href="https://linkedin.com/in/maxkamachee" target="_blank" style="color:var(--ink2);" style-hover="color:var(--accent)">LinkedIn&nbsp;</a>
+      <a href="Max-Kamachee-Resume.pdf" target="_blank" style="color:var(--ink2);" style-hover="color:var(--accent)">Résumé&nbsp;</a>
+    </nav>
+  </div>
+
+  <div style="flex:1;max-width:760px;width:100%;margin:0 auto;padding:0 40px;">
+
+    <!-- ============ HOME ============ -->
+    <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+    <section style="animation:pageIn .35s ease;padding:30px 0 80px;">
+      <p style="font-size:21px;line-height:1.7;color:var(--ink);margin:0 0 22px;">What's up, I’m Max, and I want AI to go well for everyone! I keep this broad on purpose, so I can follow the problems I think matter most.&nbsp;Right now I’m a <a href="https://www.matsprogram.org" target="_blank" style="color: var(--accent); border-bottom: 1px solid var(--accent);">MATS</a> fellow in Berkeley, mentored by Stephen Casper.</p>
+      <p style="font-size:19px;line-height:1.7;color:var(--ink2);margin:0 0 22px;">I am an undergrad at UW–Madison studying Computer Science and Data Science and graduating in the fall of 2026. There, I am part of a student group full of ambitious, capable people I've learned a lot from (WAISI). My research has spanned transferable adversarial materials with UChicago XLab, entity-level hallucination detection with Prof. Sharon Li, and most recently a project I led on&nbsp;<a href="https://dx.doi.org/10.2139/ssrn.5829303" target="_blank" style="color: var(--accent); border-bottom: 1px solid var(--accent);">how company choices shape video-deepfake abuse</a>.</p>
+      
+
+      <p style="font-size:19px;line-height:1.7;color:var(--ink2);margin:0;">I was born and raised in southern California. I have grown up swimming, playing waterpolo, and enjoying the ocean. I like to read, eat/cook good food, work out, and travel. Most of all, I love meeting new people! So please reach out if you'd like to chat.&nbsp;</p><div style="margin-top:52px;">
+        <div style="font-size:14px;letter-spacing:0.1em;text-transform:uppercase;color:var(--faint);margin-bottom:6px;">AFFILIATIONS</div>
+        <div style="display:grid;grid-template-columns:130px 1fr;gap:4px 22px;padding:16px 0;border-top:1px solid var(--rule);font-size:16.5px;">
+          <div style="color:var(--faint);">2026 —</div><div>Research Fellow, <span style="color: var(--ink);">MATS 10.0</span></div>
+        </div>
+        <div style="display:grid;grid-template-columns:130px 1fr;gap:4px 22px;padding:16px 0;border-top:1px solid var(--rule);font-size:16.5px;">
+          <div style="color:var(--faint);">2025–26</div><div>Affiliate Researcher, <span style="color:var(--ink);">UChicago XLab</span></div>
+        </div>
+        <div style="display:grid;grid-template-columns:130px 1fr;gap:4px 22px;padding:16px 0;border-top:1px solid var(--rule);font-size:16.5px;">
+          <div style="color:var(--faint);">2025</div><div>Software Engineer, <span style="color:var(--ink);">Quantum Intelligence Group</span></div>
+        </div>
+        <div style="display:grid;grid-template-columns:130px 1fr;gap:4px 22px;padding:16px 0;border-top:1px solid var(--rule);font-size:16.5px;">
+          <div style="color:var(--faint);">2024–25</div><div>Undergraduate Researcher, <span style="color:var(--ink);">UW–Madison CS</span> · Prof. Sharon Li</div>
+        </div>
+        <div style="display:grid;grid-template-columns:130px 1fr;gap:4px 22px;padding:16px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);font-size:16.5px;">
+          <div style="color:var(--faint);">2024</div><div>Research Assistant, <span style="color:var(--ink);">UW–Madison Materials Science</span></div>
+        </div>
+      </div>
+    </section>
+    </sc-if>
+
+    <!-- ============ RESEARCH ============ -->
+    <sc-if value="{{ isResearch }}" hint-placeholder-val="{{ false }}">
+    <section style="animation:pageIn .35s ease;padding:30px 0 80px;">
+      <div style="font-style:italic;color:var(--ink2);font-size:17px;margin:0 0 38px;">In other words..</div>
+
+      <article style="padding-bottom:34px;margin-bottom:34px;border-bottom:1px solid var(--rule);">
+        <a href="https://dx.doi.org/10.2139/ssrn.5829303" target="_blank" style="font-weight:600;font-size:24px;line-height:1.25;display:block;margin-bottom:8px;" style-hover="color:var(--accent)">Video Deepfake Abuse: How Company Choices Predictably Shape Misuse Patterns&nbsp;<span style="color:var(--accent);font-size:0.7em;">↗</span></a>
+        <div style="font-style:italic;font-size:16px;color:var(--ink2);margin-bottom:6px;"><span style="font-style: normal; color: var(--ink);">Max Kamachee*</span><span style="color: var(--ink2);">, Stephen Casper*, Michelle L. Ding, Rui-Jie Yew, Anka Reuel, Stella Biderman, and Dylan Hadfield-Menell&nbsp; · 2025</span></div>
+        <sc-if value="{{ showAbstracts }}" hint-placeholder-val="{{ true }}">
+          <p style="font-size:17px;line-height:1.62;color:var(--ink2);margin:12px 0 0;">A small number of open-weight video models have become the dominant tools for non-consensual deepfake generation. We trace how developer and distributor choices — data curation, safeguards, moderation — foreseeably shape downstream misuse, and argue that risk management at the model and platform level can substantially reduce harm.</p>
+        </sc-if>
+      </article>
+
+      <article>
+        <a href="https://openreview.net/pdf?id=494k7e9R5D" target="_blank" style="font-weight:600;font-size:24px;line-height:1.25;display:block;margin-bottom:8px;" style-hover="color:var(--accent)">HalluEntity: Benchmarking and Understanding Entity-Level Hallucination Detection&nbsp;<span style="color:var(--accent);font-size:0.7em;">↗</span></a>
+        <div style="font-style:italic;font-size:16px;color:var(--ink2);margin-bottom:6px;">Min-Hsuan Yeh, <span style="font-style:normal;color:var(--ink);">Max Kamachee</span>, Seongheon Park, Yixuan Li · TMLR 2025, ICLR 2026</div>
+        <sc-if value="{{ showAbstracts }}" hint-placeholder-val="{{ true }}">
+          <p style="font-size:17px;line-height:1.62;color:var(--ink2);margin:12px 0 0;">Uncertainty-based hallucination detection usually works at the sentence or paragraph level. We introduce HalluEntity — a benchmark of 18,785 entity-level annotations — and evaluate detection methods across 17 modern LLMs, finding token-level approaches over-predict while context-aware methods do better but remain suboptimal.</p>
+        </sc-if>
+      </article>
+    </section>
+    </sc-if>
+
+    <!-- ============ COOL STUFF ============ -->
+    <sc-if value="{{ isCool }}" hint-placeholder-val="{{ false }}">
+    <section style="animation:pageIn .35s ease;padding:30px 0 80px;">
+      <div style="font-style:italic;color:var(--ink2);font-size:17px;margin:0 0 38px;">Projects, involvements, and things I care about</div>
+
+      <div style="padding:22px 0;border-top:1px solid var(--rule);">
+        <div style="font-weight:600;font-size:20px;margin-bottom:6px;">Expert consultant for ongoing litigation</div>
+        <p style="font-size:17px;line-height:1.6;color:var(--ink2);margin:0;">Retained as an expert consultant on AI product safety and the foreseeable misuse of generative image models, drawing on my deepfake-abuse research.</p>
+      </div>
+
+      <div style="padding:22px 0;border-top:1px solid var(--rule);">
+        <div style="font-weight:600;font-size:20px;margin-bottom:6px;">Horizon Institute Career Accelerator</div>
+        <p style="font-size:17px;line-height:1.6;color:var(--ink2);margin:0;">Selected for a competitive AI-policy accelerator preparing people for careers shaping how AI is governed.</p>
+      </div>
+
+      <div style="padding:22px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);">
+        <div style="font-weight:600;font-size:20px;margin-bottom:6px;">Multi-agent jailbreak demo — Center for AI Policy</div>
+        <p style="font-size:17px;line-height:1.6;color:var(--ink2);margin:0;">Built a multi-agent system from scratch showing how jailbreaks cascade between agents, and presented it to congressional staffers in D.C. with the Wisconsin AI Safety Initiative (WAISI).</p>
+      </div>
+    </section>
+    </sc-if>
+
+    <!-- ============ NOW ============ -->
+    <sc-if value="{{ isNow }}" hint-placeholder-val="{{ false }}">
+    <section style="animation:pageIn .35s ease;padding:30px 0 80px;">
+      <div style="font-style:italic;color:var(--ink2);font-size:17px;margin:0 0 38px;">Updated June 2026</div>
+
+      <p style="font-size:19px;line-height:1.7;color:var(--ink);margin:0 0 22px;">This summer I’m a <a href="https://www.matsprogram.org" target="_blank" style="color: var(--accent); border-bottom: 1px solid var(--accent);">MATS 10.0</a> fellow in Berkeley, working on technical AI governance and unlearning in dual use domains.</p>
+      
+      <p style="font-size:19px;line-height:1.7;color:var(--ink2);margin:0 0 22px;">Alongside that, I’m consulting on litigation involving AI product safety and the foreseeable misuse of generative image models, exploring the bay area, and trying to make as many friends as possible.</p>
+    </section>
+    </sc-if>
+
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <div class="app-foot" style="max-width:760px;width:100%;margin:0 auto;padding:24px 40px 48px;font-size:14px;color:var(--faint);display:flex;justify-content:space-between;border-top:1px solid var(--rule);flex-wrap:wrap;gap:8px;">
+    <span><span style="color: var(--faint);">© 2026&nbsp;</span><span style="color: var(--faint);">Max Kamachee</span></span>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;accent&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#3a5a78&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;#3a5a78&quot;, &quot;#8a4434&quot;, &quot;#3f6048&quot;, &quot;#5a4a78&quot;], &quot;section&quot;: &quot;Theme&quot; },
+  &quot;paper&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;Paper&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;Paper&quot;, &quot;Cream&quot;, &quot;White&quot;], &quot;section&quot;: &quot;Theme&quot; },
+  &quot;showAbstracts&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Content&quot; }
+}">
+class Component extends DCLogic {
+  state = { page: "home" };
+  PAPER = { Paper: "#f5f1e8", Cream: "#f3ecdd", White: "#fbfaf6" };
+
+  applyTheme() {
+    if (!this.rootEl) return;
+    const p = this.props || {};
+    this.rootEl.style.setProperty("--accent", p.accent || "#3a5a78");
+    this.rootEl.style.setProperty("--paper", this.PAPER[p.paper] || "#f5f1e8");
+  }
+  componentDidUpdate() { this.applyTheme(); }
+
+  go(page) {
+    this.setState({ page });
+    if (typeof window !== "undefined") window.scrollTo(0, 0);
+  }
+
+  renderVals() {
+    const page = this.state.page;
+    const ink = "#1b1a17";
+    const accent = (this.props && this.props.accent) || "#3a5a78";
+    const col = (p) => (page === p ? accent : ink);
+    const ul = (p) => (page === p ? accent : "transparent");
+    return {
+      isHome: page === "home",
+      isResearch: page === "research",
+      isCool: page === "cool",
+      isNow: page === "now",
+      cHome: col("home"), uHome: ul("home"),
+      cResearch: col("research"), uResearch: ul("research"),
+      cCool: col("cool"), uCool: ul("cool"),
+      cNow: col("now"), uNow: ul("now"),
+      goHome: () => this.go("home"),
+      goResearch: () => this.go("research"),
+      goCool: () => this.go("cool"),
+      goNow: () => this.go("now"),
+      emailTo: () => { if (typeof window !== "undefined") window.location.href = "mail" + "to:" + "max.kamachee" + String.fromCharCode(64) + "gmail" + "." + "com"; },
+      showAbstracts: this.props.showAbstracts ?? true,
+      rootRef: (el) => { this.rootEl = el; this.applyTheme(); },
+    };
+  }
+}
+</script>
+</body>
+</html>
